@@ -1,0 +1,34 @@
+.content {
+    position: absolute;
+    background-color: rgb(190, 212, 231);
+    height: 100vh;
+    width: 100vw;
+}
+
+.carousel-frame {
+    margin: 80px auto; 
+    background-color: white;
+    width: 90vw;
+    height: 340px;
+}
+
+.carousel-strip {
+    background-color: white;
+    height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.button-row {
+    margin: 0 auto;
+    background-color: lightgray;
+    height: 40px;
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel-image {
+    height: 100%;
+}

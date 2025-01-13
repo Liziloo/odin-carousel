@@ -3,6 +3,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { watchFiles } = require('fs');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -14,11 +15,13 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 const config = {
     entry: './src/index.js',
     output: {
+        filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
+    devtool: 'eval-source-map',
     devServer: {
-        open: true,
-        host: 'localhost',
+        watchFiles: ['./src/index.html'],
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -31,8 +34,16 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/i,
-                loader: 'babel-loader',
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: [
+                      ['@babel/preset-env', { targets: "defaults" }]
+                    ]
+                  }
+                }
             },
             {
                 test: /\.css$/i,
