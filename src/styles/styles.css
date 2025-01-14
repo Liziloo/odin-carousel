@@ -6,29 +6,25 @@
 }
 
 .carousel-frame {
-    margin: 80px auto; 
-    background-color: white;
-    width: 90vw;
-    height: 340px;
+    height: 250px;
+    width: 200px;
+    overflow: hidden;
+    display: flex;
+    margin: 30px auto 0;
 }
 
-.carousel-strip {
-    background-color: white;
-    height: 300px;
-    width: 250px;
-    margin: 0 auto;
-    z-index: -1;
+.image-container {
+    height: 250px;
+    width: 200px;
+}
+
+img {
+    object-fit: cover;
 }
 
 .button-row {
+    width: 200px;
     margin: 0 auto;
-    background-color: lightgray;
-    height: 40px;
-    width: 250px;
     display: flex;
-    justify-content: space-around;
-}
-
-.carousel-image {
-    height: 100%;
+    justify-content: space-between;
 }
