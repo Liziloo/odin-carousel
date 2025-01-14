@@ -8,7 +8,6 @@
 .carousel-frame {
     height: 250px;
     width: 200px;
-    overflow: hidden;
     display: flex;
     margin: 30px auto 0;
 }
@@ -17,6 +16,7 @@
     height: 250px;
     width: 200px;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 img {
