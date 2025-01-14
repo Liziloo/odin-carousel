@@ -19,7 +19,7 @@ const carousel = () => {
     const prevButton = document.querySelector('.previous');
     prevButton.addEventListener('click', (e) => {
         e.preventDefault();
-        slideIndex -= 1;
+        slideIndex--;
         slides.forEach((slide) => {
             slide.style.display = 'none';
         });
@@ -28,4 +28,16 @@ const carousel = () => {
         slides[slideIndex].style.display = 'block';
     });
     
+    const nextButton = document.querySelector('.next');
+    nextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        slideIndex++;
+        slides.forEach((slide) => {
+            slide.style.display = 'none';
+        })
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        slides[slideIndex].style.display = 'block';
+    })
 }
