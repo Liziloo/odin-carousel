@@ -5,6 +5,20 @@ const carousel = () => {
     const slideNodes = document.querySelectorAll('.image-container');
     const slides = [...slideNodes];
 
+    const placekeeperDiv = document.querySelector('.placekeeper-div');
+    slides.forEach((_, index, array) => {
+        const placekeeper = document.createElement('div');
+        placekeeper.classList.add('placekeeper');
+        placekeeperDiv.appendChild(placekeeper);
+        placekeeper.addEventListener('click', () => {
+            array.forEach((slide) => {
+                slide.style.display = 'none';
+            })
+            slideIndex = index;
+            array[index].style.display = 'block';
+        })
+    })
+
     function showSlides() {
         slides.forEach((slide) => {
             slide.style.display = 'none';

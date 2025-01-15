@@ -24,8 +24,32 @@ img {
 }
 
 .button-row {
+    background-color: white;
     width: 200px;
+    height: 30px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    gap: 5px;
+}
+
+.placekeeper-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex: 1 0 auto;
+    overflow: hidden;
+}
+
+.placekeeper-div > * {
+    border: 1px solid gray;
+    width: 100%;
+    max-width: 10px;
+    border-radius: 50%;
+}
+
+.placekeeper-div > *:before {
+    display: block;
+    content: '';
+    margin-top: 100%;
 }
