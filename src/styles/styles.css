@@ -53,3 +53,7 @@ img {
     content: '';
     margin-top: 100%;
 }
+
+.attribution {
+    text-align: center;
+}
